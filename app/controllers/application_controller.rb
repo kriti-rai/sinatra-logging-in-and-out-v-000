@@ -25,6 +25,7 @@ class ApplicationController < Sinatra::Base
     if Helpers.is_logged_in?(session)
       erb :account
     else
+      raise params.inspect
       erb :error
     end
   end
