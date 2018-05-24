@@ -22,10 +22,10 @@ class ApplicationController < Sinatra::Base
 
   get '/account' do
     @user = Helpers.current_user(session)
+
     if Helpers.is_logged_in?(session)
       erb :account
     else
-      raise params.inspect
       erb :error
     end
   end
